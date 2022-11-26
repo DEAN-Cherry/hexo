@@ -35,8 +35,8 @@ copy:
 # formal:
 #   icon: link || the description
 social:
-  # fab fa-github: https://github.com/xxxxx || Github
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email
+#   fab fa-github: https://github.com/DEAN-Cherry || Github
+#   fas fa-envelope: mailto:nbybrany@gmail.com || Email
 
 # search (搜索)
 # see https://butterfly.js.org/posts/ceeb73f/#搜索系統
@@ -70,7 +70,7 @@ mathjax:
 katex:
   enable: false
   per_page: false
-  hide_scrollbar: true
+  hide_scrollbar: false
 
 # Image (圖片設置)
 # --------------------------------------
@@ -418,7 +418,7 @@ crisp:
 messenger:
   enable: false
   pageID:
-  lang: zh_TW # Language en_US/zh_CN/zh_TW and so on
+  lang: zh_CN # Language en_US/zh_CN/zh_TW and so on
 
 # Footer Settings
 # --------------------------------------
@@ -894,7 +894,7 @@ CDN:
   # when set it to local, you need to install hexo-butterfly-extjs
   third_party_provider: jsdelivr
 
-  # Add version number to CDN, true or false  
+  # Add version number to CDN, true or false
   version: false
 
   # Custom format

@@ -15,27 +15,27 @@ hexo.extend.filter.register('before_generate', () => {
   const thirdPartySrc = hexo.render.renderSync({ path: path.join(hexo.theme_dir,'/plugins.yml'), engine: 'yaml'})
   const internalSrc = {
     main: {
-      name: 'hexo-theme-butterfly',
+      name: 'butterfly',
       file: 'js/main.js',
       version
     },
     utils: {
-      name: 'hexo-theme-butterfly',
+      name: 'butterfly',
       file: 'js/utils.js',
       version
     },
     translate: {
-      name: 'hexo-theme-butterfly',
+      name: 'butterfly',
       file: 'js/tw_cn.js',
       version
     },
     local_search: {
-      name: 'hexo-theme-butterfly',
+      name: 'butterfly',
       file: 'js/search/local-search.js',
       version
     },
     algolia_js: {
-      name: 'hexo-theme-butterfly',
+      name: 'butterfly',
       file: 'js/search/algolia.js',
       version
     }
@@ -72,7 +72,7 @@ hexo.extend.filter.register('before_generate', () => {
         cdnjs: `https://cdnjs.cloudflare.com/ajax/libs/${cdnjs_name}/${version}/${min_cdnjs_file}`,
         custom: (CDN.custom_format || '').replace(/\$\{(.+?)\}/g, (match, $1) => value[$1])
       }
-      
+
       data[key] = cdnSource[type]
     })
 
