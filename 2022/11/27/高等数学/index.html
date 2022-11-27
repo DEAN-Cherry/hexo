@@ -1,0 +1,715 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>高等数学 | 朝菌而已</title><meta name="author" content="Bryan"><meta name="copyright" content="Bryan"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="有待证明  [[#1 洛必达法则]] [[#2 x n-1 与 x n 1]] [[#3 两一元函数乘积的可导性的讨论]] [[#4 积分]] [[#5 证明积分不等式]] [[#6 正劈椎体]] [[#7 曲率]] [[#8 函数的零点]] [[#9 达布中值定理 Darboux&#39;s theory]] [[#10 Delta x 与 rm d x 的关系]]">
+<meta property="og:type" content="article">
+<meta property="og:title" content="高等数学">
+<meta property="og:url" content="https://hexo.bynie.cn/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/index.html">
+<meta property="og:site_name" content="朝菌而已">
+<meta property="og:description" content="有待证明  [[#1 洛必达法则]] [[#2 x n-1 与 x n 1]] [[#3 两一元函数乘积的可导性的讨论]] [[#4 积分]] [[#5 证明积分不等式]] [[#6 正劈椎体]] [[#7 曲率]] [[#8 函数的零点]] [[#9 达布中值定理 Darboux&#39;s theory]] [[#10 Delta x 与 rm d x 的关系]]">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-11-26T16:39:14.261Z">
+<meta property="article:modified_time" content="2022-11-27T04:15:28.077Z">
+<meta property="article:author" content="Bryan">
+<meta property="article:tag" content="Mathematic">
+<meta name="twitter:card" content="summary"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://hexo.bynie.cn/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '高等数学',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-11-27 12:15:28'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">朝菌而已</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">高等数学</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-11-26T16:39:14.261Z" title="发表于 2022-11-27 00:39:14">2022-11-27</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-11-27T04:15:28.077Z" title="更新于 2022-11-27 12:15:28">2022-11-27</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="高等数学"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="有待证明">有待证明</h1>
+<ol type="1">
+<li><input type="checkbox" disabled="" />[[#1 洛必达法则]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#2 x n-1 与 x n
+1]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#3
+两一元函数乘积的可导性的讨论]]</li>
+<li><input type="checkbox" disabled="" />[[#4 积分]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#5
+证明积分不等式]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#6 正劈椎体]]</li>
+<li><input type="checkbox" disabled="" />[[#7 曲率]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#8
+函数的零点]]</li>
+<li><input type="checkbox" disabled="" />[[#9 达布中值定理 Darboux's
+theory]]</li>
+<li><input type="checkbox" disabled="" />[[#10 Delta x 与 rm d x
+的关系]]</li>
+<li><input type="checkbox" disabled="" checked="" />[[#11 混合积]]<br />
+</li>
+<li><input type="checkbox" disabled="" />[[#12 投影方程 曲面方程]]</li>
+</ol>
+<hr />
+<h2 id="洛必达法则">1. 洛必达法则</h2>
+<p>#定理 <font color = "lightblue">【定理 1.12】</font>设</p>
+<p>（ⅰ）<span class="math inline">\(\lim_{x \rightarrow a} f(x) = 0
+\quad (\infty),\quad \lim_{x \rightarrow a}g(x) = 0 \quad
+(\infty);\)</span> （ⅱ）<span class="math inline">\(f(x),g(x) 在 x=a
+的空心邻域可导，g^{&#39;}(x) \neq 0;\)</span> （ⅲ）<span
+class="math inline">\(\lim_{x \rightarrow a} \frac{f&#39;(x)}{g&#39;(x)}
+= A\)</span>, 则 <span class="math inline">\(\lim_{x \rightarrow a}
+\frac{f(x)}{g(x)} = A\)</span>, 其中 <span
+class="math inline">\(A\)</span> 可以是有限数也可以是 <span
+class="math inline">\(\infty\)</span> 或 <span
+class="math inline">\(\pm\infty\)</span>.</p>
+<p><font color = "lightblue ">【注】</font> ① 将 <span
+class="math inline">\(x \to a\)</span> 改为 <span
+class="math inline">\(x \to a\,+,\; x \to a\, -\)</span>, 或 <span
+class="math inline">\(x \to \infty, \,+\infty, \, -\infty\)</span>
+等也有响应的洛必达法则. ==② <span
+class="math inline">\(\frac{\infty}{\infty}\)</span>
+型未定式的洛必达法则可推广成:==</p>
+<p>（ⅰ）设 <span class="math inline">\(\lim_{x \to a}g(x) =
+\infty\)</span>, 条件 （ⅱ）与（ⅲ）不变，则结论也不变，即 <span
+class="math inline">\(\lim_{x \to a} \frac{f(x)}{g(x)} = A\)</span>
+(不必要求 <span class="math inline">\(\lim_{x \to a}f(x) =
+\infty\)</span>)</p>
+<p>③ 数列极限不能直接使用洛必达法则. 如用,
+需要先转化成连续变量的极限即函数极限.</p>
+<p><br></p>
+<hr />
+<h2 id="xn-1-与-xn-1">2. <span class="math inline">\(x^n-1\)</span> 与
+<span class="math inline">\(x^n + 1\)</span></h2>
+<h3 id="xn-1-与-xn-1-的分解"><span class="math inline">\(x^n-1\)</span>
+与 <span class="math inline">\(x^n + 1\)</span> 的分解</h3>
+<p>对于多项式<span class="math inline">\(x^n-1\)</span>显然有 <span
+class="math display">\[
+x^n-1 = (x-1)(x^{n-1} + x^{n-2} + \cdots + x + 1)
+\]</span> 只需要注意到等式右边等于 <span class="math display">\[
+\begin{aligned}
+&amp;x^{n}+x^{n-1}+x^{n-2}+\cdots+x^{2}+x \\
+&amp;\quad-x^{n-1}-x^{n-2}-\cdots-x^{2}-x-1 \\
+&amp;=x^{n}-1
+\end{aligned}
+\]</span></p>
+<p>对于多项式 <span class="math inline">\(x^n + 1\)</span>, 当 <span
+class="math inline">\(n = 2m + 1\)</span> 的时候, 我们有 <span
+class="math display">\[
+x^{2m+1} + 1 = (x + 1)(x^{2m} - x^{2m-1} + \cdots + x^{2} - x + 1)
+\]</span></p>
+<p>只需要注意到等式右边等于 <span class="math display">\[
+\begin{aligned}
+&amp;x^{2 m+1}-x^{2 m}+x^{2 m-1}-\cdots+x \\
+&amp;\quad+x^{2 m}-x^{2 m-1}+\cdots-x+1 \\
+&amp;=x^{2 m+1}+1
+\end{aligned}
+\]</span></p>
+<p><br></p>
+<hr />
+<h2 id="两一元函数乘积的可导性的讨论">3.
+两一元函数乘积的可导性的讨论</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">title:结论</span><br><span class="line">设 $g(x)$ 在 $x = a$ 可导，$\varphi (x)$ 在 $x = a$ 连续而不可导, 则</span><br><span class="line">$$</span><br><span class="line">g (x) \varphi (x) \ 在 \ x = a \ 处 \quad</span><br><span class="line">\begin&#123;cases&#125;</span><br><span class="line">		\text&#123; 不可导,&#125; &amp; \text&#123;若 $g(a) \neq 0$&#125;  \\[2ex]</span><br><span class="line">		\text&#123; 可导且导数为 $g^&#123;&#x27;&#125;(a) \varphi (x),$ &#125; &amp; \text&#123;若 $g(a) = 0$ &#125;\\</span><br><span class="line">\end&#123;cases&#125;</span><br><span class="line">$$</span><br></pre></td></tr></table></figure>
+<p><font color ='lightblue'>【证明】</font></p>
+<p>① 因为 <span class="math inline">\(\varphi^{&#39;}(x)\)</span>
+不存在, 所以不能 <span class="math inline">\(g(x)\varphi(x)\)</span>
+用乘积的求导法则; ② 当 <span class="math inline">\(g(a) \neq 0\)</span>
+时, 若 <span class="math inline">\(F(x)\)</span> 在 <span
+class="math inline">\(x=a\)</span> 可导, 可对 <span
+class="math inline">\(\frac{F(x)}{g(x)}\)</span> 用商的求导法则.</p>
+<p>(Ⅰ). 若 <span class="math inline">\(g(a) = 0\)</span>, 按定义考察
+<span class="math display">\[
+\begin{aligned}
+    &amp; \qquad \qquad \frac{F(x)-F(a)}{x-a} = \frac{g(x)\varphi(x) -
+g(a)\varphi (a)}{x - a} = \frac{g(x)-g(a)}{x-a}\varphi(a),
+    \\
+    &amp;\text{则} \qquad \qquad \lim_{x \to a} \frac{F(x)-F(a)}{x - a}
+= \lim_{x \to a} \frac{g(x) - g(a)}{x - a} \lim_{x \to a} \varphi(x) =
+g^{&#39;}(a)\varphi(x),
+    \\
+    &amp;\text{即} \qquad F^{&#39;}(a) = g^{&#39;}(a) \varphi (x)
+\end{aligned}
+\]</span> 充分性得证.</p>
+<p>(Ⅱ). 再用反证法证明: 若 <span
+class="math inline">\(F^{&#39;}(a)\)</span> 存在, 则必有 <span
+class="math inline">\(g(a) = 0\)</span>. 若 <span
+class="math inline">\(g(a) \neq 0\)</span>, 由商的求导法则即知 <span
+class="math inline">\(\varphi (x) = \frac{F(x)}{g(x)}\)</span> 在 <span
+class="math inline">\(x=a\)</span> 可导, 与假设条件 <span
+class="math inline">\(\varphi (a)\)</span> 在 <span
+class="math inline">\(x=a\)</span> 处不可导矛盾. 因而必要性得证.</p>
+<p><br></p>
+<hr />
+<h2 id="积分">4. 积分</h2>
+<p><span class="math display">\[
+J = \int_{a}^{b} x^2 \sqrt{(x-a)(x-b)} \, {\rm d}x
+\]</span></p>
+<p><br></p>
+<hr />
+<h2 id="证明积分不等式">5. 证明积分不等式</h2>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">title: 结论</span><br><span class="line"></span><br><span class="line">常用方法:</span><br><span class="line">① 定积分的性质</span><br><span class="line">② 分部积分法</span><br><span class="line">③ 引进辅助函数</span><br><span class="line">④ 把一元函数积分转化为二元函数的二重积分等</span><br><span class="line">⑤ 泰勒公式</span><br><span class="line">⑥ 牛顿-布莱尼兹公式 </span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><font color = "lightgreen">【例 3.47】</font>设 <span
+class="math inline">\(f(x)\)</span> 与 <span
+class="math inline">\(g(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span>
+上连续，且同为单调不减（或同单调不增）函数, 证明: <span
+class="math display">\[
+(b-a) \int_{a}^{b} f(x)g(x) \, {\rm d}x \geq \int_{a}^{b} f(x) \, {\rm
+d}x \int_{a}^{b} g(x) {\rm d}x
+\]</span></p>
+<ul>
+<li><font color ="lightblue">【证法一】</font>引进辅助函数</li>
+</ul>
+<p><span class="math display">\[
+F(x) = (x-a) \int_{a}^{b} f(t)g(t) \, {\rm d}t - \int_{a}^{b} f(t) \,
+{\rm d}t \int_{a}^{b} g(t) \, {\rm d}t
+\]</span></p>
+<p>转化为证明 <span class="math inline">\(F(x) \geq 0 \quad (x \in
+[a,b]).\)</span></p>
+<p><span class="math inline">\(\quad\)</span> 由 <span
+class="math inline">\(F(a) = 0\)</span>,</p>
+<p><span class="math display">\[
+\begin{aligned}
+    F^{&#39;}(x)
+    &amp; = \int_{a}^{x}f(t)g(t) \, {\rm d}t + (x-a)f(x)g(x) - f(x)
+\int_{a}^{x}g(t) \, {\rm d}t - g(x) \int_{a}^{x}f(t) \, {\rm d}t \\
+    &amp; = \int_{a}^{x}f(t)[g(t)-g(x)] \,{\rm d}t - \int_{a}^{x}
+f(x)[g(t) - g(x)] \,{\rm d}t \\
+    &amp; = \int_{a}^{x}[f(t) - f(x)][g(t)-g(x)] \, {\rm d}t \geq 0
+\quad (x \in [a,b])
+\end{aligned}
+\]</span></p>
+<p>其中 <span class="math inline">\((x-a)f(x)g(x) = \int_{a}^{x}f(x)g(x)
+\, {\rm d}t\)</span>, 我们可得 <span class="math inline">\(F(x)\)</span>
+在 <span class="math inline">\([a,b]\)</span> 单调不减 <span
+class="math inline">\(\Rightarrow F(x) \geq F(a) = 0 \quad (x \in
+[a,b])\)</span>, 特别有 <span class="math inline">\(F(b) \geq 0\)</span>
+. 即原式成立.</p>
+<ul>
+<li><font color ='lightblue '>【证法二】</font>
+转化为证明二重积分不等式</li>
+</ul>
+<p><span class="math inline">\(\quad\)</span> 记 <span
+class="math inline">\(D = \{ (x,y) \mid a \leq x \leq b, a \leq y \leq b
+\}\)</span>. 由 <span class="math inline">\(f(x), g(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 连续, 且同为单调不减 (或单调不增),
+<span class="math inline">\(\Rightarrow [f(x) -
+f(y)][g(x)-g(y)]\)</span> 在 <span class="math inline">\(D\)</span>
+连续且</p>
+<p><span class="math display">\[
+\begin{aligned}[]
+    &amp;[f(x)-f(y)][g(x)-g(y)] \geq 0 \quad (\;(x,y)\in D\;) \\[1em]
+    &amp;\iint_D[f(x)-f(y)][g(x) - g(y)] \, \mathrm{d}x \geq 0 .
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+    \text{左式}
+    &amp; =
+    \iint_Df(x)g(x) \,{\rm d} \sigma - \iint_Df(y)g(y) \,{\rm d} \sigma
+- \iint_Df(x)g(y) \,{\rm d} \sigma  + \iint_Df(y)g(y) \,{\rm d} \sigma
+    \\
+    &amp; = 2(b-a)\int_{a}^{b}f(x)g(x) \,{\rm d} x - 2 \int_{a}^{b} f(x)
+\,{\rm d} x \int_{a}^{b} g(x) \,{\rm d} x \geq 0
+\end{aligned}
+\]</span></p>
+<p>故得证.</p>
+<p>==有时一元函数的积分问题转化为二元函数的二重积分问题带来方便==</p>
+<hr />
+<p><font color ='lightgreen'>【例 4.48】</font>设 <span
+class="math inline">\(f(x)\)</span> 在 <span
+class="math inline">\([a,b]\)</span> 有二阶连续导数, <span
+class="math inline">\(M = \max_{[a,b]} \mid f^{\prime \prime}(x)
+\mid\)</span>, 证明:</p>
+<p><span class="math display">\[
+\left|
+\int_{a}^{b} f(x) \,{\rm d}x - f(\frac{a+b}{2})(b-a)
+\right|
+\leq \frac{(b-a)^3}{24}M.
+\]</span></p>
+<ul>
+<li><p><font color ='lightblue '> 【证法一】</font> 分部积分两次,
+给二阶导数就凑成二阶导的形式</p></li>
+<li><p><font color ='lightblue '> 【证法二】</font></p></li>
+</ul>
+<p>在 <span class="math inline">\(x_0 = c
+\stackrel{\text{记}}{=\mathrel{\mkern-3mu}=}\frac{a+b}{2}\)</span> 处
+<span class="math inline">\(f(x)\)</span> 展成泰勒公式</p>
+<p><span class="math display">\[
+f(x) = f(c) + f^{\prime}(c)(x-c) + \frac{1}{2} f^{\prime
+\prime}(\xi)(x-c)^2,
+\]</span> 在 <span class="math inline">\(x\)</span> 与 <span
+class="math inline">\(c\)</span> 之间. 将上式积分得</p>
+<p><span class="math display">\[
+\begin{aligned}  
+    &amp;\int_{a}^{b}f(x) \,{\rm d} x = (b-a)f(\frac{a+b}{2}) +
+f^{\prime}(c) \int_{a}^{b}(x-c) \,{\rm d}x + \frac{1}{2} \int_{a}^{b}
+f^{\prime \prime}(\xi)(x-c)^2 \,{\rm d} x.
+    \\[1em]
+    \text{注意} \qquad
+&amp;\color{lightblue}{\enclose{roundedbox}{\left.\int_{a}^{b}(x-c)
+\,{\rm d} x = \frac{1}{2} (x-c)^2\right|_a^b =0,} }
+    \\[1em]
+    &amp; \left| \frac{1}{2} \int_{a}^{b} f^{\prime \prime}(\xi)(x-c)^2
+\,{\rm d}x \right| \leq \frac{1}{2} M \int_{a}^{b}(x-c)^2 \,{\rm d}x =
+\left.\frac{1}{6}M(x-c)^3\right|_a^b = \frac{M}{24}(b-a)^3,
+    \\[1em]
+    \text{因此} \qquad &amp;\left| \int_{a}^{b} f(x) \,{\rm d} x -
+(b-a)f(\frac{a+b}{2})\right| \leq \frac{M}{24}(b-a)^3.
+\end{aligned}
+\]</span></p>
+<hr />
+<h2 id="正劈椎体">6. 正劈椎体</h2>
+<p><span class="math display">\[
+\begin{aligned}
+    V &amp;=\int_{-R}^{R}A(x) \,{\rm d}x = h \int_{-R}^{R} \sqrt{R^2 -
+x^2} \,{\rm d }x
+    \\
+    &amp;=\frac{\pi R^2h}{2}
+\end{aligned}
+\]</span></p>
+<p><em>==可知正劈椎体的体积等于同底同高的圆柱体积的一半==</em></p>
+<p><br></br> <br></br></p>
+<hr />
+<h2 id="曲率">7. 曲率</h2>
+<p><br></br> <br></br></p>
+<hr />
+<h2 id="函数的零点">8. 函数的零点</h2>
+<p><font color ='lightgreen '>【例 4.37】</font> 设 <span
+class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([x_1,
+x_2]\)</span> 可导, <span
+class="math inline">\(0&lt;x_1&lt;x_2\)</span>, 证明: <span
+class="math inline">\(\exists \xi \in (x_1, x_2)\)</span> 使得</p>
+<p><span class="math display">\[
+\frac{1}{x_1 - x_2}
+\begin{vmatrix}
+    x_1 &amp; x_2
+    \\
+    f(x_1) &amp; f(x_2)
+\end{vmatrix}
+= f(\xi) - \xi f^{ \prime }(\xi).
+\]</span></p>
+<p><font color ='lightblue '>【分析】</font> 令 <span
+class="math inline">\(l=\frac{1}{x_1 -x_2}\begin{vmatrix}x_1 &amp;
+x_2\\f(x_1)&amp;f(x_2)\end{vmatrix}\)</span> 证明 <span
+class="math inline">\(\exists \xi \in(x_1, x_2)\)</span> 使得 <span
+class="math inline">\(l = f(\xi) - \xi f^{\prime}(x) \Longleftrightarrow
+xf^{\prime}(x) - f(x) + l\)</span> 在 <span class="math inline">\((x_1,
+x_2)\)</span> 存在零点 <span
+class="math inline">\(\Leftrightarrow\)</span> <span
+class="math inline">\([\frac{1}{x}f(x) - \frac{l}{x}]^{\prime}\)</span>
+在 <span class="math inline">\((x_1, x_2)\)</span> 存在零点 <span
+class="math inline">\(\Longleftrightarrow f(x)-xf^{\prime}(x)-l\)</span>
+在 <span class="math inline">\((x_1, x_2)\)</span> 存在零点. 易知 <span
+class="math display">\[
+\begin{aligned}
+&amp;M=y, N=-x, \frac{\partial M}{\partial x}=1, \frac{\partial
+N}{\partial x}=-1,
+\\[1em]
+\text{积分因子} \qquad &amp; \mu =e^{\int\psi(x)dx} \quad \psi(x)=
+\frac{1-(-1)}{-x}=-\frac{2}{x},
+\\[1em]
+\text{原方程可化为} \qquad &amp; \frac{f(x)-xf^{\prime}(x)-l}{x^2} =
+\left[  \frac{l}{x} - \frac{f(x)}{x}\right]^{\prime}
+\\[1em]
+\text{即} \qquad &amp; \left[  \frac{l}{x} -
+\frac{f(x)}{x}\right]^{\prime} \text{在 $(x_1, x_2)$上存在零点}
+\\[1em]
+\end{aligned}
+\]</span></p>
+<p><font color ='lightblue '> 【证明】</font> <span
+class="math display">\[
+\begin{aligned}
+\text{令} \qquad &amp; F(x) = \frac{l}{x}- \frac{f(x)}{x}  , \;
+\text{其中} \; l =
+\frac{1}{x_1 - x_2}
+\begin{vmatrix}
+    x_1 &amp; x_2
+    \\
+    f(x_1) &amp; f(x_2)
+\end{vmatrix}
+= f(\xi) - \xi f^{ \prime }(\xi)
+\\[1em]
+\text{又} \qquad &amp; F(x_1) = \frac{1}{x_1}[l - f(x_1)], \quad F(x_2)
+= \frac{1}{x_2} \left[f(x_2)-l\right],
+\\[1em]
+&amp; F(x_1)-F(x_2)= \frac{1}{x_1 x_2} \left[ f(x_1)x_2 - f(x_2)x_1 -
+l(x_2 - x_1)\right] = 0.
+\end{aligned}
+\]</span> 因此, 由罗尔定理, <span class="math inline">\(\exists \xi
+\in(x_1, x_2), s.t.\)</span> <span class="math display">\[
+F^{\prime}(\xi) = \frac{1}{\xi}f^{\prime}(x) - \frac{1}{\xi^2}f(\xi) +
+\frac{l}{\xi^2}  = \frac{1}{\xi^2} \left[f(\xi) - \xi f^{\prime}(\xi) -
+l \right] = 0
+\]</span></p>
+<p>即</p>
+<p><span class="math display">\[
+f(\xi) - \xi f^{\prime}(\xi) = l .
+\]</span></p>
+<hr />
+<h1 id="常用不等式">常用不等式</h1>
+<p><span class="math display">\[
+\begin{array}{c}
+  H_{n}=\frac{n}{\sum \limits_{i=1}^{n}\frac{1}{x_{i}}}=
+\frac{n}{\frac{1}{x_{1}}+ \frac{1}{x_{2}}+ \cdots + \frac{1}{x_{n}}}
+  \\
+   G_{n}=\sqrt[n]{\prod \limits_{i=1}^{n}x_{i}}=
+\sqrt[n]{x_{1}x_{2}\cdots x_{n}}
+   \\
+   A_{n}=\frac{1}{n}\sum \limits_{i=1}^{n}x_{i}=\frac{x_{1}+ x_{2}+
+\cdots + x_{n}}{n}
+   \\
+   Q_{n}=\sqrt{\sum \limits_{i=1}^{n}x_{i}^{2}}= \sqrt{\frac{x_{1}^{2}+
+x_{2}^{2}+ \cdots + x_{n}^{2}}{n}}
+   \\
+    H_{n}\leq G_{n}\leq A_{n}\leq Q_{n}
+\end{array}
+\]</span></p>
+<p><br></br> <br></br></p>
+<hr />
+<h2 id="达布中值定理-darbouxs-theory">9. 达布中值定理 (Darboux's theory
+)</h2>
+<p>设 <span class="math inline">\(y=f(x)\)</span> 在 <span
+class="math inline">\((A, B)\)</span> 区间中可导, 且 <span
+class="math inline">\([a, b]\)</span> 包含于 <span
+class="math inline">\((A, B)\)</span>, <span
+class="math inline">\(f^{\prime}(a)&lt;f^{\prime}(b)\)</span>,
+则对于任意给定的 <span class="math inline">\(\eta:
+f^{\prime}(a)&lt;\eta&lt;f^{\prime}(b)\)</span>, 都存在一点 <span
+class="math inline">\(\xi \in(a, b)\)</span>, 使得 <span
+class="math inline">\(f^{\prime}(\xi)=\eta\)</span> .</p>
+<p>由极限保号性 <span class="math inline">\(\exists \delta_1&gt;0,
+\forall x \in\left(a, a+\delta_1\right)\)</span>, 恒有 <span
+class="math inline">\(\frac{g(x)-g(a)}{x-a}&lt;0\)</span>, 即 <span
+class="math inline">\(g(x)&lt;g(a)\)</span>. 同样 <span
+class="math inline">\(\exists \delta_2&gt;0, \forall x
+\in\left(b-\delta_2, b\right)\)</span>, 恒有 <span
+class="math inline">\(\frac{g(x)-g(b)}{x-b}&gt;0\)</span>, 即 <span
+class="math inline">\(g(x)&lt;g(b)\)</span>.</p>
+<p><font color ='lightgreen'>【例 5.9】</font> 设 <span
+class="math inline">\(f(x)\)</span> 在 <span class="math inline">\([a,
+b]\)</span> 三次可微, 证明: <span class="math inline">\(\exists \, \xi
+\in (a, b)\)</span>, 使得</p>
+<p><span class="math display">\[
+f(b) = f(a) + f^{\prime}(\frac{a+b}{2})(b-a) +
+\frac{1}{24}(b-a)^3f^{\prime \prime \prime}(\xi).
+\]</span></p>
+<ul>
+<li><p><font color ='lightblue'>【分析】</font> 从要证明的结论来看,
+可考虑在 <span class="math inline">\(x_0 = \frac{a+b}{2}\)</span>
+处展开的泰勒公式并取 <span class="math inline">\(x=a,
+b\)</span>.</p></li>
+<li><p><font color ='lightblue'>【证明】</font> 从要证明的结论来看,
+可考虑在 <span class="math inline">\(x_0 = \frac{a+b}{2}\)</span>
+处展开的泰勒公式并取 <span class="math inline">\(x=a,
+b\)</span>.</p></li>
+</ul>
+<p>this is the end.</p>
+<hr />
+<p><br><br></p>
+<h2 id="delta-x-与-rm-d-x-的关系">10. <span class="math inline">\(\Delta
+x\)</span> 与 <span class="math inline">\({\rm d} \,x\)</span>
+的关系</h2>
+<hr />
+<p><br><br></p>
+<h2 id="混合积">11. 混合积</h2>
+<h3 id="几何意义">1) 几何意义</h3>
+<p>向量的混合积 <span class="math inline">\([\boldsymbol{a}
+\boldsymbol{b} \boldsymbol{c}]=(\boldsymbol{a} \times \boldsymbol{b})
+\cdot \boldsymbol{c}\)</span> 是这样一个数, 它的绝对值表示以向量 <span
+class="math inline">\(\boldsymbol{a}、 \boldsymbol{b}、
+\boldsymbol{c}\)</span> 为棱的平行六面体的体积. 如果向量 <span
+class="math inline">\(\boldsymbol{a}、 \boldsymbol{b}、
+\boldsymbol{c}\)</span> 组成右手系, 那么混合积的符号是正的;
+如果组成左手系, 那么混合积的符号是负的.</p>
+<p>又<code>四面体</code>的体积 <span class="math inline">\(V\)</span>
+等于同顶点三条棱组成的<code>平行六面体</code>的体积的六分之一</p>
+<h3 id="异面直线公垂线的一般方程">2) 异面直线公垂线的一般方程</h3>
+<p><span class="math display">\[
+\left\{\begin{array}{l}
+\left(\overrightarrow{P_1 P}, \boldsymbol{U}_1, \boldsymbol{U}_1 \times
+\boldsymbol{U}_2\right)=0. \\
+\left(\overrightarrow{P_2 P}, \boldsymbol{U}_2, \boldsymbol{U}_1 \times
+\boldsymbol{U}_2\right)=0.
+\end{array}\right.
+\]</span></p>
+<hr />
+<h2 id="投影方程曲面方程">12. 投影方程&amp;曲面方程</h2>
+<p><span class="math inline">\(T\)</span></p>
+<p><br> <br></p>
+<hr />
+<h2 id="拉普拉斯方程">13. 拉普拉斯方程</h2>
+<p>已知 <span class="math inline">\(\left\{\begin{array}{l}x=r \cos
+\theta \\ y=r \sin \theta ，(1) \text { 求证变换 } \\
+z=z\end{array}\right.\)</span> <span class="math display">\[
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial
+y^2}+\frac{\partial^2 u}{\partial z^2}=\frac{\partial^2 u}{\partial
+r^2}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^2}
+\frac{\partial^2 u}{\partial \theta^2}+\frac{\partial^2 u}{\partial z^2}
+\]</span> (1) 分别关于 <span class="math inline">\(x, y\)</span>
+求偏导有 <span class="math display">\[
+\left\{\begin{array} { l }
+{ 1 = \operatorname { c o s } \theta \frac { \partial r } { \partial x }
+- r \operatorname { s i n } \theta \frac { \partial \theta } { \partial
+x } } \\
+{ 0 = \operatorname { s i n } \theta \frac { \partial r } { \partial x }
++ r \operatorname { c o s } \theta \frac { \partial \theta } { \partial
+x } }
+\end{array} \Rightarrow \left\{\begin{array}{l}
+\frac{\partial r}{\partial x}=\cos \theta \\
+\frac{\partial \theta}{\partial x}=-\frac{\sin \theta}{r}
+\end{array}\right.\right.
+\]</span></p>
+<p><span class="math display">\[\left\{\begin{array}{l}0=\cos \theta
+\frac{\partial r}{\partial y}-r \sin \theta \frac{\partial
+\theta}{\partial y} \\ 1=\sin \theta \frac{\partial r}{\partial y}+r
+\cos \theta \frac{\partial \theta}{\partial y}\end{array}
+\Rightarrow\left\{\begin{array}{l}\frac{\partial r}{\partial y}=\sin
+\theta \\ \frac{\partial \theta}{\partial y}=\frac{\cos
+\theta}{r}\end{array}\right.\right.\]</span></p>
+<p><span class="math display">\[
+\Rightarrow\left\{\begin{array}{l}\frac{\partial u}{\partial
+x}=\frac{\partial u}{\partial r} \frac{\partial r}{\partial
+x}+\frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial
+x}=\frac{\partial u}{\partial r} \cos \theta-\frac{\partial u}{\partial
+\theta} \frac{\sin \theta}{r} \\ \frac{\partial u}{\partial
+y}=\frac{\partial u}{\partial r} \frac{\partial r}{\partial
+y}+\frac{\partial u}{\partial \theta} \frac{\partial \theta}{\partial
+y}=\frac{\partial u}{\partial r} \sin \theta+\frac{\partial u}{\partial
+\theta} \frac{\cos \theta}{r}\end{array}\right.
+\]</span></p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial x^2}=\frac{\partial}{\partial
+r}\left(\frac{\partial u}{\partial x}\right) \frac{\partial r}{\partial
+x}+\frac{\partial}{\partial \theta}\left(\frac{\partial u}{\partial
+x}\right) \frac{\partial \theta}{\partial x}
+\]</span></p>
+<p><span class="math display">\[
+=\cos \theta\left(\frac{\partial^2 u}{\partial r^2} \cos
+\theta-\frac{\partial^2 u}{\partial \theta \partial r} \frac{\sin
+\theta}{r}+\frac{\partial u}{\partial \theta} \frac{\sin
+\theta}{r^2}\right)-\frac{\sin \theta}{r}\left(\frac{\partial^2
+u}{\partial r \partial \theta} \cos \theta-\frac{\partial u}{\partial r}
+\sin \theta-\frac{\partial^2 u \sin \theta}{\partial \theta^2}
+\frac{\partial u}{r}-\frac{\cos \theta}{\partial \theta}
+\frac{1}{r}\right)
+\]</span></p>
+<p><span class="math display">\[
+=\frac{\partial^2 u}{\partial r^2} \cos ^2 \theta+\frac{\partial
+u}{\partial r} \frac{\sin ^2 \theta}{r}+2 \frac{\partial u}{\partial
+\theta} \frac{\sin \theta \cos \theta}{r^2}+\frac{\partial^2 u \sin ^2
+\theta}{\partial \theta^2} \frac{\partial^2 u}{r^2}-2 \frac{\sin \theta
+\cos \theta}{\partial \theta \partial r}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\frac{\partial^2 u}{\partial y^2}=\frac{\partial}{\partial
+r}\left(\frac{\partial u}{\partial y}\right) \frac{\partial r}{\partial
+y}+\frac{\partial}{\partial \theta}\left(\frac{\partial u}{\partial
+y}\right) \frac{\partial \theta}{\partial y} \\
+&amp;=\frac{\partial^2 u}{\partial r^2} \sin ^2 \theta+\frac{\partial
+u}{\partial r} \frac{\cos ^2 \theta}{r}-2 \frac{\partial u}{\partial
+\theta} \frac{\sin \theta \cos \theta}{r^2}+\frac{\partial^2 u \cos ^2
+\theta}{\partial \theta^2} \frac{r^2}{r^2}+2 \frac{\partial^2
+u}{\partial \theta \partial r} \frac{\sin \theta \cos \theta}{r}
+\end{aligned}
+\]</span></p>
+<p>则有</p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial
+y^2}+\frac{\partial^2 u}{\partial z^2}=\frac{\partial^2 u}{\partial
+r^2}+\frac{1}{r} \frac{\partial u}{\partial r}+\frac{1}{r^2}
+\frac{\partial^2 u}{\partial \theta^2}+\frac{\partial^2 u}{\partial z^2}
+\]</span></p>
+<p>特殊的对于二元函数, 有</p>
+<p><span class="math display">\[
+\frac{\partial^2 u}{\partial x^2}+\frac{\partial^2 u}{\partial y^2} =
+\frac{\partial^2 u}{\partial r^2}+\frac{1}{r} \frac{\partial u}{\partial
+r}+\frac{1}{r^2} \frac{\partial^2 u}{\partial \theta^2}
+\]</span></p>
+<hr />
+<h2 id="轮换对称性">14. 轮换对称性</h2>
+<p><font color ='lightgreen'>【例 10.15】</font></p>
+<p><br> <br></p>
+<hr />
+<h2 id="zeta2">15. <span class="math inline">\(\zeta(2)\)</span></h2>
+<h4 id="方法一-parseval-定理">方法一 <span
+class="math inline">\(Parseval\)</span> 定理</h4>
+<p>根据 <span class="math inline">\(Parseval \ \text{等式}\)</span> 有
+<span class="math display">\[
+\frac{1}{\pi} \int_{-n}^\pi[f(x)]^2 d
+x=\frac{a_0^2}{2}+\sum_{n=0}^{\infty}\left[a_n^2+b_n^2\right]
+\]</span> 取 <span class="math inline">\(f (x)=x, x\in(-\pi,
+\pi)\)</span>, 有 <span class="math display">\[
+\begin{aligned}
+\frac{1}{\pi}\int^{\pi}_{-\pi}x^2 \mathrm{d}x &amp;=
+\sum_{n=0}^{\infty}(\frac{2(-1)^{n+1}}{n})^2
+\\
+\frac{2}{3}\pi^2 &amp; = 4\sum_{n=1}^{\infty} \frac{1}{n^2}
+\\
+\sum_{n = 1}^{\infty}\frac{1}{n^2} &amp; = \frac{\pi^2}{6}
+\end{aligned}
+\]</span></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="https://hexo.bynie.cn">Bryan</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://hexo.bynie.cn/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/">https://hexo.bynie.cn/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://hexo.bynie.cn" target="_blank">朝菌而已</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Mathematic/">Mathematic</a></div><div class="post_share"><div class="social-share" data-image="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/11/27/Quantum%20Mechanics/"><img class="prev-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">Quantum Mechanics</div></div></a></div><div class="next-post pull-right"><a href="/2022/11/26/newBlog/"><img class="next-cover" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">newBlog</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Bryan</div><div class="author-info__description">无名小站</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">4</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/DEAN-Cherry" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:nbybrany@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%89%E5%BE%85%E8%AF%81%E6%98%8E"><span class="toc-number">1.</span> <span class="toc-text">有待证明</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%9B%E5%BF%85%E8%BE%BE%E6%B3%95%E5%88%99"><span class="toc-number">1.1.</span> <span class="toc-text">1. 洛必达法则</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#xn-1-%E4%B8%8E-xn-1"><span class="toc-number">1.2.</span> <span class="toc-text">2. \(x^n-1\) 与
+\(x^n + 1\)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#xn-1-%E4%B8%8E-xn-1-%E7%9A%84%E5%88%86%E8%A7%A3"><span class="toc-number">1.2.1.</span> <span class="toc-text">\(x^n-1\)
+与 \(x^n + 1\) 的分解</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%A4%E4%B8%80%E5%85%83%E5%87%BD%E6%95%B0%E4%B9%98%E7%A7%AF%E7%9A%84%E5%8F%AF%E5%AF%BC%E6%80%A7%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="toc-number">1.3.</span> <span class="toc-text">3.
+两一元函数乘积的可导性的讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A7%AF%E5%88%86"><span class="toc-number">1.4.</span> <span class="toc-text">4. 积分</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%81%E6%98%8E%E7%A7%AF%E5%88%86%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">1.5.</span> <span class="toc-text">5. 证明积分不等式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%AD%A3%E5%8A%88%E6%A4%8E%E4%BD%93"><span class="toc-number">1.6.</span> <span class="toc-text">6. 正劈椎体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%B2%E7%8E%87"><span class="toc-number">1.7.</span> <span class="toc-text">7. 曲率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%87%BD%E6%95%B0%E7%9A%84%E9%9B%B6%E7%82%B9"><span class="toc-number">1.8.</span> <span class="toc-text">8. 函数的零点</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E4%B8%8D%E7%AD%89%E5%BC%8F"><span class="toc-number">2.</span> <span class="toc-text">常用不等式</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%BE%E5%B8%83%E4%B8%AD%E5%80%BC%E5%AE%9A%E7%90%86-darbouxs-theory"><span class="toc-number">2.1.</span> <span class="toc-text">9. 达布中值定理 (Darboux&#39;s theory
+)</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#delta-x-%E4%B8%8E-rm-d-x-%E7%9A%84%E5%85%B3%E7%B3%BB"><span class="toc-number">2.2.</span> <span class="toc-text">10. \(\Delta
+x\) 与 \({\rm d} \,x\)
+的关系</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B7%B7%E5%90%88%E7%A7%AF"><span class="toc-number">2.3.</span> <span class="toc-text">11. 混合积</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%87%A0%E4%BD%95%E6%84%8F%E4%B9%89"><span class="toc-number">2.3.1.</span> <span class="toc-text">1) 几何意义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BC%82%E9%9D%A2%E7%9B%B4%E7%BA%BF%E5%85%AC%E5%9E%82%E7%BA%BF%E7%9A%84%E4%B8%80%E8%88%AC%E6%96%B9%E7%A8%8B"><span class="toc-number">2.3.2.</span> <span class="toc-text">2) 异面直线公垂线的一般方程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8A%95%E5%BD%B1%E6%96%B9%E7%A8%8B%E6%9B%B2%E9%9D%A2%E6%96%B9%E7%A8%8B"><span class="toc-number">2.4.</span> <span class="toc-text">12. 投影方程&amp;曲面方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%89%E6%99%AE%E6%8B%89%E6%96%AF%E6%96%B9%E7%A8%8B"><span class="toc-number">2.5.</span> <span class="toc-text">13. 拉普拉斯方程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BD%AE%E6%8D%A2%E5%AF%B9%E7%A7%B0%E6%80%A7"><span class="toc-number">2.6.</span> <span class="toc-text">14. 轮换对称性</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#zeta2"><span class="toc-number">2.7.</span> <span class="toc-text">15. \(\zeta(2)\)</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E4%B8%80-parseval-%E5%AE%9A%E7%90%86"><span class="toc-number">2.7.0.1.</span> <span class="toc-text">方法一 \(Parseval\) 定理</span></a></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/11/27/Quantum%20Mechanics/" title="Quantum Mechanics"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Quantum Mechanics"/></a><div class="content"><a class="title" href="/2022/11/27/Quantum%20Mechanics/" title="Quantum Mechanics">Quantum Mechanics</a><time datetime="2022-11-26T16:47:20.928Z" title="发表于 2022-11-27 00:47:20">2022-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="高等数学"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="高等数学"/></a><div class="content"><a class="title" href="/2022/11/27/%E9%AB%98%E7%AD%89%E6%95%B0%E5%AD%A6/" title="高等数学">高等数学</a><time datetime="2022-11-26T16:39:14.261Z" title="发表于 2022-11-27 00:39:14">2022-11-27</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/newBlog/" title="newBlog"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="newBlog"/></a><div class="content"><a class="title" href="/2022/11/26/newBlog/" title="newBlog">newBlog</a><time datetime="2022-11-26T14:59:24.000Z" title="发表于 2022-11-26 22:59:24">2022-11-26</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/11/26/hello-world/" title="Hello World"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"/></a><div class="content"><a class="title" href="/2022/11/26/hello-world/" title="Hello World">Hello World</a><time datetime="2022-11-26T14:58:10.641Z" title="发表于 2022-11-26 22:58:10">2022-11-26</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By Bryan</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>if (!window.MathJax) {
+  window.MathJax = {
+    tex: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"]],
+      tags: 'ams'
+    },
+    chtml: {
+      scale: 1.1
+    },
+    options: {
+      renderActions: {
+        findScript: [10, doc => {
+          for (const node of document.querySelectorAll('script[type^="math/tex"]')) {
+            const display = !!node.type.match(/; *mode=display/)
+            const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display)
+            const text = document.createTextNode('')
+            node.parentNode.replaceChild(text, node)
+            math.start = {node: text, delim: '', n: 0}
+            math.end = {node: text, delim: '', n: 0}
+            doc.math.push(math)
+          }
+        }, ''],
+        insertScript: [200, () => {
+          document.querySelectorAll('mjx-container').forEach(node => {
+            if (node.hasAttribute('display')) {
+              btf.wrap(node, 'div', { class: 'mathjax-overflow' })
+            } else {
+              btf.wrap(node, 'span', { class: 'mathjax-overflow' })
+            }
+          });
+        }, '', false]
+      }
+    }
+  }
+  
+  const script = document.createElement('script')
+  script.src = 'https://cdn.jsdelivr.net/npm/mathjax/es5/tex-mml-chtml.min.js'
+  script.id = 'MathJax-script'
+  script.async = true
+  document.head.appendChild(script)
+} else {
+  MathJax.startup.document.state(0)
+  MathJax.texReset()
+  MathJax.typeset()
+}</script></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
